@@ -25,8 +25,6 @@ class HomepageSA {
         return DestinationPage;
     }
 
-
-
 }
 
 class DestinationSA {
@@ -39,18 +37,25 @@ class DestinationSA {
         this.SelectDepartDateFromCal = page.locator('button').filter({ hasText: '21' }).first()
         this.selectReturnDateFromCal = page.locator('button').filter({ hasText: '10' }).last()
         this.Search = page.locator('button:has-text("SEARCH")');
+        this.searchResultDepart=page.getByText('1. Paris to New York');
     }
 
-    async searchDestination() {
-        await this.SelectOrigin.fill("Paris");
+    async searchDestination(Origin,Destination) {
+        await console.log(Origin+Destination)
+        await this.SelectOrigin.fill(Origin);
         await this.page.keyboard.press('Enter');
-        await this.SelectDestination.fill("New York");
+        await this.SelectDestination.fill(Destination);
         await this.page.keyboard.press('Enter');
         await this.SelectDepartDate.click();
         await this.SelectDepartDateFromCal.click();
         await this.selectReturnDateFromCal.click();
         await this.Search.click();
     }
+    async  searchResults(){
+        const result=await this.searchResultDepart.innerText();
+        return result;
+    }
 }
 
 module.exports = { HomepageSA, DestinationSA };
+

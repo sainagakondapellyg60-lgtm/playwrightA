@@ -19,7 +19,7 @@ const config=({
   timeout: 30*1000,
   //for assertions timeout
   expect:{
- timeout:30*1000,   
+ timeout:3*1000,   
   },
 reporter: 'html',
 

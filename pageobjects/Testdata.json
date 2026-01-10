@@ -1,0 +1,10 @@
+[
+    {
+        "OriginCity": "Paris",
+        "DestinationCity": "New York"
+    },
+    {
+        "OriginCity": "London",
+        "DestinationCity": "New York"
+    }
+]
