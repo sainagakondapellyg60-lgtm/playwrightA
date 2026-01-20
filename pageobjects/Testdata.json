@@ -1,10 +1,10 @@
 [
     {
-        "OriginCity": "Paris",
+        "OriginCity": "London",
         "DestinationCity": "New York"
     },
     {
-        "OriginCity": "London",
+        "OriginCity": "Paris",
         "DestinationCity": "New York"
     }
 ]

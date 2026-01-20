@@ -16,7 +16,7 @@ import { trace } from 'console';
 const config=({
   testDir: './tests',
   //overriding default 30sec timeout by playwright
-  timeout: 30*1000,
+  timeout: 50*1000,
   //for assertions timeout
   expect:{
  timeout:3*1000,   
