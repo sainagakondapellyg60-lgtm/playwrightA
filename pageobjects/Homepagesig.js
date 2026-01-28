@@ -34,7 +34,7 @@ class DestinationSA {
         this.SelectDestination = page.getByPlaceholder('Select destination');
         this.SelectDepartDate = page.locator('label:has-text("DEPART DATE")');
         this.SelectReturnDate = page.locator('label:has-text("RETURN DATE")');
-        this.SelectDepartDateFromCal = page.locator('button').filter({ hasText: '21' }).first()
+        this.SelectDepartDateFromCal = page.locator('button').filter({ hasText: '29' }).first()
         this.selectReturnDateFromCal = page.locator('button').filter({ hasText: '10' }).last()
         this.Search = page.locator('button:has-text("SEARCH")');
         this.searchResultDepart1 = page.locator('(//*[@class="page_header--wrap"])[1]')
@@ -45,20 +45,21 @@ class DestinationSA {
         await console.log(Origin + "--" + Destination)
         await this.page.waitForLoadState('load');
         await this.SelectOrigin.fill(Origin);
-        await this.page.keyboard.press('Enter');
-        await this.page.waitForTimeout(2000);
-        await this.SelectDestination.fill(Destination);
-        await this.page.keyboard.press('Enter');
-        await this.page.waitForTimeout(2000);
+        await this.page.keyboard.press('Enter', {delay:150});
+      
+        await this.SelectDestination.fill(Destination,{delay:150});
+        await this.page.keyboard.press('Enter',{delay:150});
+        
         await this.SelectDepartDate.click();
-        await this.SelectDepartDateFromCal.click();
-        await this.page.waitForTimeout(2000);
-        await this.selectReturnDateFromCal.click();
-        await this.page.waitForTimeout(2000);
-        await this.Search.click();
+        await this.SelectDepartDateFromCal.click({delay:150});
+        
+        await this.selectReturnDateFromCal.click({delay:150});
+       
+        await this.Search.click({delay:150});
+  
     }
     async searchResults() {
-        await this.page.waitForLoadState('load');
+        
         return await this.searchResultDepart1.textContent();
     }
 }

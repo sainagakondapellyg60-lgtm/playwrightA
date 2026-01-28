@@ -26,6 +26,9 @@ reporter: 'html',
 use: {
    browserName: 'chromium',
    headless : false,
+    launchOptions: {
+      slowMo: 300
+    },
    screenshot : 'on',
    trace : 'retain-on-failure',
      },
