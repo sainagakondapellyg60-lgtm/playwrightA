@@ -7,13 +7,13 @@ http://www.uitestingplayground.com/
 
 
 # command to create and open allure reports:
+
 run this cmd for test execution and allure reports:
 npx playwright test tests --reporter=line,allure-playwright
 
-run to open report
-allure generate allure-results --clean -o allure-report
-
-allure open allure-report
+run to open report and generate
+npx allure generate allure-results --clean -o allure-report
+npx allure open allure-report
 
 # to run tests for desired config file
 npx playwright test --project=chromium --config=playwright.config.js
@@ -22,5 +22,7 @@ npx playwright test --project=chromium --config=playwright.config.js
 # run by test name
 npx playwright test --grep @smoke
 
-
+# add the test execution commands in the package.json file under script{}
+and run: npm run Uitests
+npm run <name Of script in package.json>
 

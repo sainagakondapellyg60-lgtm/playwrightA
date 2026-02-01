@@ -2,13 +2,19 @@
   "name": "playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+
+  "regression": "npx playwright test tests --reporter=line,allure-playwright",
+  "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.58.1",
-    "@types/node": "^24.10.0"
+    "@types/node": "^24.10.0",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.5"
   }
 }
