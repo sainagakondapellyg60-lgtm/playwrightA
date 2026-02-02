@@ -5,7 +5,9 @@
   "scripts": {
 
   "regression": "npx playwright test tests --reporter=line,allure-playwright",
-  "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright"
+  "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright",
+  "justreg": "npx playwright test tests",
+  "justUI" : "npx playwright test tests/UIBasics.spec.js"
     },
   "keywords": [],
   "author": "",

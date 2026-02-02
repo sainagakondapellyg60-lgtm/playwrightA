@@ -5,6 +5,9 @@ https://letcode.in/
 https://automationexercise.com/
 http://www.uitestingplayground.com/
 
+try belowas well:
+https://www.flightaware.com/
+
 
 # command to create and open allure reports:
 
