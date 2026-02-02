@@ -6,4 +6,4 @@ node_modules/
 /playwright/.auth/
 playwright-report/
 allure-report/
-allure-results/
+/allure-results/
