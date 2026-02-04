@@ -13,7 +13,7 @@ const mycar=new car("Ford","Mustang",2021);
 console.log(mycar.brand); //Ford
 console.log(mycar.model); //Mustang
 console.log(mycar.year); //2021
-mycar.refuel(); //Refueling the car...
+mycar.refuel(); //Refueling the car... Ford
 
 
 const mycar2=new car("Toyota","T1",2023);
