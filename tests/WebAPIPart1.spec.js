@@ -47,10 +47,3 @@ test("check login bypassed via API test", async ({ page }) => {
 }
 
 )
-
-/*implemt storage state
-login in real and captures entire browser auth state to .json file and pass as argunment wherver needed.
-Cookies (even HttpOnly)
-localStorage
-sessionStorage 
-*/

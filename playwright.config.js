@@ -36,7 +36,7 @@ use: {
    video : 'retain-on-failure',
    ignoreHttpsErrors: 'true',
    permissions:['geolocation'], //allowlocation in browser
-   trace : 'retain-on-failure',
+   trace : 'on',//retain-on-failure, off, on
   viewport :null, // {width:720,height:720}, //for webapp window size
  //...devices['Moto G4'], //'iPhone 14'  mobil eemulation
 //run in cmd : node -e "console.log(Object.keys(require('@playwright/test').devices).filter(d => d.includes('iPhone') || d.includes('Pixel') || d.includes('Galaxy') || d.includes('Moto')).join('\n'))"
