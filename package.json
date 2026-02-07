@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-
-  "regression": "npx playwright test tests --reporter=line,allure-playwright",
-  "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright",
-  "justreg": "npx playwright test tests",
-  "justUI" : "npx playwright test tests/UIBasics.spec.js"
-    },
+    "regression": "npx playwright test tests --reporter=line,allure-playwright",
+    "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright",
+    "justreg": "npx playwright test tests",
+    "justUI": "npx playwright test tests/UIBasics.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,5 +17,8 @@
     "@types/node": "^24.10.0",
     "allure-commandline": "^2.36.0",
     "allure-playwright": "^3.4.5"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }
