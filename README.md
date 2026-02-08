@@ -29,3 +29,6 @@ npx playwright test --grep @smoke
 and run: npm run Uitests
 npm run <name Of script in package.json>
 
+#jenkins
+open the cmd in the jenkins folder and run
+java -jar jenkins.war httpPort=8080
