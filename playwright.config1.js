@@ -15,7 +15,7 @@ import { trace } from 'console';
  */
 const config=({
   testDir: './tests',
-   retries : 2,
+   retries : 0,
   workers : 2,
   //overriding default 30sec timeout by playwright
   timeout: 50*1000,
