@@ -7,3 +7,4 @@ node_modules/
 playwright-report/
 /allure-report/
 /allure-results/
+.github/workflows/copilot-setup-steps.yml
