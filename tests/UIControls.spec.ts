@@ -1,4 +1,4 @@
-const {test, expect}=require('@playwright/test');
+import {test, expect} from '@playwright/test';
 
 test.only('login', async({page}) =>{
    
@@ -11,8 +11,6 @@ test.only('login', async({page}) =>{
       await page.locator('#okayBtn').click();
 
      await  page.pause();
-     
-
 
 
         //https://snippylab.com/
