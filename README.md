@@ -32,3 +32,6 @@ npm run <name Of script in package.json>
 #jenkins
 open the cmd in the jenkins folder and run
 java -jar jenkins.war httpPort=8080
+
+# run test cases via scripts in  package.json
+npm run currentTest
