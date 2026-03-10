@@ -1,7 +1,7 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 import { TIMEOUTS } from '../constants/timeouts';
 
-export class clientSideDelay {
+export class clientSideDelayPage {
     page: Page;
     clientSieDealybtn: Locator;
     clientreplyText: Locator;

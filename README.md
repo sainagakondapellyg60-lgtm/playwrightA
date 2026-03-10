@@ -35,3 +35,19 @@ java -jar jenkins.war httpPort=8080
 
 # run test cases via scripts in  package.json
 npm run currentTest
+
+# how to start jenkins server and what you require for setup
+we need java to be configured in our syste and also in environment variables
+navigate to the jenkins.war file ("C:\Users\saina\Desktop\Softwares\jenkins.war") 
+and open cmd on the same path and then run below cmd
+java -jar jenkins.war --httpPort=8080
+
+once successfully running, then lauch browser and navigate to http://localhost:8080/
+using above port
+
+# to keep aluure server on and upon refresh it will load latest test execution report 
+terminal 1 
+allure open allure-report --port 4040
+
+terminal 2
+run tests with genrate report

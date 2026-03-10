@@ -4,12 +4,11 @@
   "main": "index.js",
   "scripts": {
     "regression": "npx playwright test tests --reporter=line,allure-playwright",
-    "Uitests": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright",
+    "Uitests": "rmdir /s /q allure-results & npx playwright test searchDestinationTestSA.spec.js --reporter=line,allure-playwright & allure generate allure-results --clean -o allure-report",
     "justreg": "npx playwright test tests",
     "justUI": "npx playwright test tests/UIBasics.spec.js",
-    "currentTest": "npx playwright test verify_dynamicID.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean -o allure-report & allure open allure-report"
-
-
+    "currentTest": "npx playwright test verify_dynamicID.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean -o allure-report & allure open allure-report",
+    "currentTestWithoutAllureopen": "rmdir /s /q allure-results & npx playwright test verify_dynamicID.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean -o allure-report"
   },
   "keywords": [],
   "author": "",

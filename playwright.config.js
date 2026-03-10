@@ -18,7 +18,7 @@ import { trace } from 'console';
   retries: 0,
   workers: 1,
   //overriding default 30sec timeout by playwright
-  timeout: 50 * 1000, 
+  timeout: 20 * 1000, 
   //for assertions timeout
   expect: {
     timeout: 16 * 1000,
@@ -28,7 +28,7 @@ import { trace } from 'console';
 
   use: {
     browserName: 'chromium',//for Iphone'webkit',
-    headless: false,
+    headless: true,
     launchOptions: {
       args: ['--start-maximized'],
       slowMo: 300

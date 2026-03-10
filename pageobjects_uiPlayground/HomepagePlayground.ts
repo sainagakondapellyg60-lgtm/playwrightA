@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { DynamicID } from './DynamicIDPage';
+import {clientSideDelayPage} from './ClientSideDelayPage';
 const url = "http://www.uitestingplayground.com/";
 
 export class HomepagePlayground {
@@ -55,7 +56,7 @@ export class HomepagePlayground {
         this.non_Breaking = page.locator('a[href="/bssp"]');
         this.overlappedElement = page.locator('a[href="/overlapped"]');
         this.shadowDom = page.locator('a[href="/shadowdom"]');
-        this.Alert = page.locator('a[href="/alerts"]');
+        this.Alert = page.getByRole('link', {name:'Alerts'});
         this.fileupload = page.locator('a[href="/upload"]');
         this.amimatedBtn = page.locator('a[href="/animated"]');
         this.disabledInput = page.locator('a[href="/disabledinput"]');
@@ -78,7 +79,11 @@ export class HomepagePlayground {
     }
      async navigateToClientSideDelay(){
         await this.clientSideDelay.click();
-       return new DynamicID(this.page);
+       return new clientSideDelayPage(this.page);
        
+    }
+    async navigateToAlerts(){
+        await this.Alert.click();
+        
     }
 }
