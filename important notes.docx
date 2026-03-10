@@ -1,0 +1,2 @@
+1.Make sure the global(page) timeout is always greater than the expect timeout.
+2.

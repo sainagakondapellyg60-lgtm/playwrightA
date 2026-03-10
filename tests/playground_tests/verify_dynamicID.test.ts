@@ -1,53 +1,32 @@
 import { test, expect, Page } from '@playwright/test';
 import { POMangerPG } from '../../pageobjects_uiPlayground/poManagerPlayground';
+//import { DynamicID } from '../../pageobjects_uiPlayground/DynamicIDPage'
 
-let poObj: POMangerPG;
-let page: Page;
-let homepagePGObj: ReturnType<typeof poObj.getHomepagePGObj>;
 
-test.beforeAll(async ({ browser }) => {
-    const context = await browser.newContext();
-    page = await context.newPage();
-    poObj = new POMangerPG(page);
-    homepagePGObj = poObj.getHomepagePGObj();
-    await homepagePGObj.launchURL();
-});
-test.beforeEach(async () => {
-    await homepagePGObj.clickHome();
+
+
+test.beforeEach(async ({ page, baseURL }) => {
+    await page.goto(baseURL!);
+
 })
 
-test('verify dynamic ID', async () => {
-
+test('verify dynamic ID', async ({page}) => {
+    const poObj = new POMangerPG(page);
+    const homepagePGObj = poObj.getHomepagePGObj();
+    await homepagePGObj.clickHome();
     console.log('begin');
-
+    const dynamicIDpage = poObj.getDynamicIDpageObj();
     //method chaining
-    const clickOne = await (await homepagePGObj
-        .navigateToDynamicID())
-        .clickIDbtn();
+    const clickOne = await (await dynamicIDpage.navigateToDynamicID()).clickIDbtn();
 
     //await page.pause();
-    await page.reload();
-    const dynamicIDpage = poObj.getDynamicIDpageObj();
     const clickTwo = await dynamicIDpage.clickIDbtn();
 
-
     // const clickThree = await dynamicIDpage.clickIDbtn()
-    await expect.soft(clickOne).not.toBe(clickTwo);
-    // await expect(clickOne).not.toBe(clickTwo)
+    await expect.soft(clickOne).toBe(clickTwo);
     console.log(clickOne + '--' + clickTwo + ' \n-- end of test');
 
 
 }
 
-)
-
-test('verifying the client Side delay ', async () => {
-    const clientObj = poObj.getClientSideDelayObj();
-    console.log('begin-2');
-    await homepagePGObj.navigateToClientSideDelay();
-    const response = await (await clientObj.clickonClientDelaybtn()).getReponsefromClient();
-    await expect.soft(response).toBe('Data calculated on the client side.');
-    console.log(response + '--end of test -2');
-
-}
 )

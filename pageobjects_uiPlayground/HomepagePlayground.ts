@@ -64,19 +64,16 @@ export class HomepagePlayground {
 
     }
 
-    async launchURL(){
-        await this.page.goto(url);
-        return this;
-    }
+   
     async clickHome(){
         await this.homePage.click();
     }
 
-    async navigateToDynamicID(){
-        await this.dynamicID.click();
-       return new DynamicID(this.page);
+    // async navigateToDynamicID(){
+    //     await this.dynamicID.click();
+    //    return new DynamicID(this.page);
        
-    }
+    // }
      async navigateToClientSideDelay(){
         await this.clientSideDelay.click();
        return new clientSideDelayPage(this.page);

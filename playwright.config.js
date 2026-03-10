@@ -16,19 +16,20 @@ import { trace } from 'console';
  const config = ({
   testDir: './tests',
   retries: 0,
-  workers: 1,
+  workers: 4,
   //overriding default 30sec timeout by playwright
-  timeout: 20 * 1000, 
+  timeout: 30 * 1000, 
   //for assertions timeout
   expect: {
-    timeout: 16 * 1000,
+    timeout: 21 * 1000,
   },
   reporter: [['html'], ['line'],
   ['allure-playwright']],
 
   use: {
+    baseURL:"http://www.uitestingplayground.com/",
     browserName: 'chromium',//for Iphone'webkit',
-    headless: true,
+    headless: false,
     launchOptions: {
       args: ['--start-maximized'],
       slowMo: 300

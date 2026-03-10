@@ -1,6 +1,6 @@
 # playwrightA
 Playwright Automation
-
+https://playground.bondaracademy.com
 https://letcode.in/
 https://automationexercise.com/
 http://www.uitestingplayground.com/
@@ -8,6 +8,8 @@ http://www.uitestingplayground.com/
 try belowas well:
 https://www.flightaware.com/
 
+# open Playwright UI for test execution debugging purpose
+npx playwright test --ui
 
 # command to create and open allure reports:
 
