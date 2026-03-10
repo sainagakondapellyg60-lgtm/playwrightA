@@ -3,8 +3,6 @@ import { POMangerPG } from '../../pageobjects_uiPlayground/poManagerPlayground';
 //import { DynamicID } from '../../pageobjects_uiPlayground/DynamicIDPage'
 
 
-
-
 test.beforeEach(async ({ page, baseURL }) => {
     await page.goto(baseURL!);
 

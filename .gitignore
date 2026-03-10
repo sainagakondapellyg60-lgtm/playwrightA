@@ -7,3 +7,5 @@ node_modules/
 playwright-report/
 /allure-report/
 /allure-results/
+javascriptP/renameFile.js
+javascriptP/renameFile.ts
