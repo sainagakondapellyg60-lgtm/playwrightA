@@ -3,6 +3,7 @@ import { POMangerPG } from '../../pageobjects_uiPlayground/poManagerPlayground';
 
 
 test.beforeEach(async ({ page, baseURL }) => {
+    console.log(baseURL)
     await page.goto(baseURL!);
 
 })

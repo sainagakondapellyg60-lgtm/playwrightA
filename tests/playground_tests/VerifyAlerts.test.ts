@@ -4,7 +4,7 @@ import { alertsPage } from '../../pageobjects_uiPlayground/AlertsPage';
 
 
 test('verify dialogs', async ({ page, baseURL }) => {
-    console.log('begin alerts');
+    console.log('begin alerts-'+baseURL);
    const poObj = new POMangerPG(page);
    const alertsPageObj = poObj.getAlertPageObj();
     await page.goto(baseURL!);

@@ -5,14 +5,15 @@ import { dialogHandler } from '../utility/dialoghandler';
 export class alertsPage {
 
 
-    readonly clickAlertbtn: Locator;
-    readonly clickConfirmbtn: Locator;
-    readonly clickPromptbtn: Locator;
-    readonly Alert: Locator;
+    private readonly clickAlertbtn: Locator;
+    private readonly clickConfirmbtn: Locator;
+    private readonly clickPromptbtn: Locator;
+    private readonly Alert: Locator;
+    private readonly page:Page
 
 
     dialog: dialogHandler
-    constructor(private page: Page) {
+    constructor(page: Page) {
         this.page = page;
         this.clickAlertbtn = page.getByRole('button', { name: 'Alert' });
         this.clickConfirmbtn = page.getByRole('button', { name: /^\s*Confirm\s*$/ });//matches Confirm with ignoring whitespaces

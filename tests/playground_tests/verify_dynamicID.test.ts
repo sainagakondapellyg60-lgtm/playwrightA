@@ -21,7 +21,7 @@ test('verify dynamic ID', async ({page}) => {
     const clickTwo = await dynamicIDpage.clickIDbtn();
 
     // const clickThree = await dynamicIDpage.clickIDbtn()
-    await expect.soft(clickOne).toBe(clickTwo);
+    await expect.soft(clickOne).not.toBe(clickTwo);
     console.log(clickOne + '--' + clickTwo + ' \n-- end of test');
 
 

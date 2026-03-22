@@ -1,5 +1,6 @@
 # playwrightA
 Playwright Automation
+https://www.ministryoftesting.com/articles/websites-to-practice-testing
 https://playground.bondaracademy.com
 https://letcode.in/
 https://automationexercise.com/

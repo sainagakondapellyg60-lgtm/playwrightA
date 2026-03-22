@@ -6,18 +6,18 @@ import { Page } from '@playwright/test';
 
 
 export class POMangerPG {
-    page: Page;
-    homepagePGObj: HomepagePlayground;
-    DynamicIdObj: DynamicID
-    clientSideDelayObj: clientSideDelayPage;
-    alertsPageObj:alertsPage;
+    private readonly page: Page;
+    private readonly homepagePGObj: HomepagePlayground;
+    private readonly DynamicIdObj: DynamicID
+    private readonly clientSideDelayObj: clientSideDelayPage;
+    private readonly alertsPageObj: alertsPage;
 
     constructor(page: Page) {
         this.page = page
         this.homepagePGObj = new HomepagePlayground(page);
         this.DynamicIdObj = new DynamicID(page);
         this.clientSideDelayObj = new clientSideDelayPage(page);
-        this.alertsPageObj=new alertsPage(page)
+        this.alertsPageObj = new alertsPage(page)
 
     }
     getHomepagePGObj() {
@@ -29,7 +29,7 @@ export class POMangerPG {
     getClientSideDelayObj() {
         return this.clientSideDelayObj;
     }
-    getAlertPageObj(){
+    getAlertPageObj() {
         return this.alertsPageObj;
     }
 }

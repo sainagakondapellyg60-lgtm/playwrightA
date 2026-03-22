@@ -1,9 +1,9 @@
 import { Page, Locator } from '@playwright/test';
 
 export class DynamicID {
-    page: Page;
-    dynamicButton: Locator;
-    dynamicID: Locator;
+    private readonly page: Page;
+    private readonly dynamicButton: Locator;
+    private readonly dynamicID: Locator;
 
 
     constructor(page: Page) {

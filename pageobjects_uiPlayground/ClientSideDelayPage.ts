@@ -2,9 +2,9 @@ import { Page, Locator } from '@playwright/test';
 import { TIMEOUTS } from '../constants/timeouts';
 
 export class clientSideDelayPage {
-    page: Page;
-    clientSieDealybtn: Locator;
-    clientreplyText: Locator;
+    private readonly page: Page;
+    private readonly clientSieDealybtn: Locator;
+    private readonly clientreplyText: Locator;
     constructor(page: Page) {
 
         this.page = page;
