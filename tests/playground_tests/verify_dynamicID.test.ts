@@ -1,4 +1,4 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '../../fixtures/baseTest';
 import { POMangerPG } from '../../pageobjects_uiPlayground/poManagerPlayground';
 //import { DynamicID } from '../../pageobjects_uiPlayground/DynamicIDPage'
 
@@ -8,7 +8,7 @@ test.beforeEach(async ({ page, baseURL }) => {
 
 })
 
-test('verify dynamic ID', async ({page}) => {
+test('@smoke @reg @ui @DM @ID verify dynamic ID', async ({page}) => {
     const poObj = new POMangerPG(page);
     const homepagePGObj = poObj.getHomepagePGObj();
     await homepagePGObj.clickHome();
@@ -21,7 +21,7 @@ test('verify dynamic ID', async ({page}) => {
     const clickTwo = await dynamicIDpage.clickIDbtn();
 
     // const clickThree = await dynamicIDpage.clickIDbtn()
-    await expect.soft(clickOne).not.toBe(clickTwo);
+    await expect.soft(clickOne,'id is not matched as expected').not.toBe(clickTwo);
     console.log(clickOne + '--' + clickTwo + ' \n-- end of test');
 
 

@@ -1,8 +1,10 @@
-import { Page, test, expect } from '@playwright/test'
+import { test, expect } from '../../fixtures/baseTest';
+import * as allure from 'allure-js-commons';
 
 const testdate = [27]
 for (const date of testdate) {
-    test(`testing datepicker for ${date}`, async ({ page }) => {
+    test(`@reg @smoke @ui @DM @date testing datepicker for ${date}`, async ({ page }) => {
+    
         console.log(date);
         await page.goto("https://playground.bondaracademy.com/pages/forms/datepicker");
         await page.getByPlaceholder('Form Picker').click();
@@ -11,7 +13,7 @@ for (const date of testdate) {
             const currentDate =
                 await page.locator("button[class='appearance-ghost size-medium shape-rectangle icon-end status-basic nb-transition']").textContent();
             console.log(currentDate)
-            if (currentDate?.trim() == 'February 2025') {
+            if (currentDate?.trim() == 'February 2025') { //? means if null return undefined else call .trim()
                 break;
             }
             await page.locator('.prev-month').click();

@@ -10,12 +10,13 @@ dotenv.config({
 });
 
 console.log(`Loaded environment: ${env}`);
-console.log(`Base URL: ${process.env.TEST_URL}`);
+console.log(`Base URL: ${process.env.TEST_URL}`+'\n'+`log Level:${process.env.lOG_LEVEL}`);
+
 
 const config = ({
   testDir: './tests',
-  retries: 0,
-  workers: 4,
+  retries: 1,
+  workers: 5,
   //overriding default 30sec timeout by playwright
   timeout: 50 * 1000,
   //for assertions timeout
@@ -27,7 +28,7 @@ const config = ({
 
   use: {
     baseURL: process.env.TEST_URL,
-    browserName: 'chromium',//for Iphone'webkit',
+    browserName: process.env.BROWSER, //'chromium',//for Iphone'webkit',
     headless: false,
     launchOptions: {
       args: ['--start-maximized'],
@@ -43,7 +44,6 @@ const config = ({
     //run in cmd : node -e "console.log(Object.keys(require('@playwright/test').devices).filter(d => d.includes('iPhone') || d.includes('Pixel') || d.includes('Galaxy') || d.includes('Moto')).join('\n'))"
 
   },
-
 
 });
 

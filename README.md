@@ -54,3 +54,8 @@ allure open allure-report --port 4040
 
 terminal 2
 run tests with genrate report
+
+
+# logger reports:
+npm install winston --save
+npm install @types/winston --save-dev

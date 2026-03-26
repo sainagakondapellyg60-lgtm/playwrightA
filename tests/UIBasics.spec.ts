@@ -1,9 +1,9 @@
 import {test, expect} from '@playwright/test';
 //runs in parallel
-//test.describe.configure({mode: 'parallel'});
+test.describe.configure({mode: 'parallel'});
 
 //run serials when one test is depend on other to proceed validation
-test.describe.configure({mode: 'serial'});
+//test.describe.configure({mode: 'serial'});
 
 test('@brillio browser context playwright test check',async ({browser})=>
 {
@@ -18,6 +18,7 @@ await expect(page).toHaveTitle("Sign in to your account")
 test('@outside login', async({page}) =>{
    
 await page.goto("https://rahulshettyacademy.com/")
+console.log("fe")
     await page.locator('a:text("Sign In")').click();
     console.log("fe")
 

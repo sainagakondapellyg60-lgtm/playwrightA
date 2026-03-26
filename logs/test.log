@@ -1,0 +1,44 @@
+2026-03-26T18:31:45.142Z [INFO]: Navigating to URL
+2026-03-26T18:36:30.709Z [INFO]: Navigating to URL
+2026-03-26T18:36:36.265Z [WARN]: Page loaded warn
+2026-03-26T18:36:36.265Z [DEBUG]: Page loaded successfully
+2026-03-26T18:47:45.691Z [INFO]: Navigating to URL
+2026-03-26T18:47:53.174Z [WARN]: Page loaded warn
+2026-03-26T18:47:53.175Z [DEBUG]: Page loaded successfully
+2026-03-26T19:05:17.895Z [INFO] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Navigating to URL
+2026-03-26T19:05:21.945Z [WARN] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded warn
+2026-03-26T19:05:21.946Z [DEBUG] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded successfully
+2026-03-26T19:16:35.516Z [INFO] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Navigating to URL
+2026-03-26T19:16:41.534Z [WARN] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded warn
+2026-03-26T19:16:41.535Z [DEBUG] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded successfully
+2026-03-26T19:18:31.409Z [INFO] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Navigating to URL
+2026-03-26T19:18:38.328Z [WARN] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded warn
+2026-03-26T19:18:38.329Z [DEBUG] [C:\Users\saina\Desktop\playwrighta\node_modules\logform\printf.js:11]: Page loaded successfully
+2026-03-26T19:20:16.476Z [INFO] [unknown]: Navigating to URL
+2026-03-26T19:20:23.166Z [WARN] [unknown]: Page loaded warn
+2026-03-26T19:20:23.168Z [DEBUG] [unknown]: Page loaded successfully
+2026-03-26T19:25:51.259Z [INFO] [loggerUtil.ts:4]: Navigating to URL
+2026-03-26T19:25:57.675Z [WARN] [loggerUtil.ts:4]: Page loaded warn
+2026-03-26T19:25:57.676Z [DEBUG] [loggerUtil.ts:4]: Page loaded successfully
+2026-03-26T19:34:58.553Z [INFO] [loggerUtil.ts:7]: Navigating to URL
+2026-03-26T19:35:05.757Z [WARN] [loggerUtil.ts:7]: Page loaded warn
+2026-03-26T19:35:05.758Z [DEBUG] [loggerUtil.ts:7]: Page loaded successfully
+2026-03-26T19:37:17.665Z [INFO] [unknown]: Navigating to URL
+2026-03-26T19:37:24.302Z [WARN] [unknown]: Page loaded warn
+2026-03-26T19:37:24.303Z [DEBUG] [unknown]: Page loaded successfully
+2026-03-26T19:39:50.505Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T19:39:57.263Z [WARN] [verifyChecked.test.ts:19]: Page loaded warn
+2026-03-26T19:39:57.267Z [DEBUG] [verifyChecked.test.ts:20]: Page loaded successfully
+2026-03-26T19:42:04.942Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T19:42:11.277Z [WARN] [verifyChecked.test.ts:19]: Page loaded warn
+2026-03-26T19:42:11.278Z [DEBUG] [verifyChecked.test.ts:20]: Page loaded successfully
+2026-03-26T20:35:22.308Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T20:35:27.570Z [WARN] [verifyChecked.test.ts:19]: Page loaded warn
+2026-03-26T20:35:27.570Z [DEBUG] [verifyChecked.test.ts:20]: Page loaded successfully
+2026-03-26T20:36:10.935Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T20:38:22.641Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T20:38:27.046Z [WARN] [verifyChecked.test.ts:19]: Page loaded warn
+2026-03-26T20:38:27.049Z [DEBUG] [verifyChecked.test.ts:20]: Page loaded successfully
+2026-03-26T21:15:03.515Z [INFO] [verifyChecked.test.ts:10]: Navigating to URL
+2026-03-26T21:15:13.287Z [WARN] [verifyChecked.test.ts:19]: Page loaded warn
+2026-03-26T21:15:13.289Z [DEBUG] [verifyChecked.test.ts:20]: Page loaded successfully

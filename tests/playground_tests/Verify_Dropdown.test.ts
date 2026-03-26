@@ -1,6 +1,6 @@
-import { Page, test, expect } from '@playwright/test'
+import { test, expect } from '../../fixtures/baseTest';
 
-test('select dropdown values', async ({ page }) => {
+test('@reg  @ui @DM @dropdown select dropdown values', async ({ page }) => {
     await page.goto("https://www.hyrtutorials.com/p/html-dropdown-elements-practice.html")
 
     const dropdown = await page.locator('select#course')

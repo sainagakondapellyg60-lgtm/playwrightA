@@ -6,12 +6,12 @@
     "regression": "npx playwright test tests --reporter=line,allure-playwright",
     "Uitests": "rmdir /s /q allure-results & npx playwright test searchDestinationTestSA.spec.js --reporter=line,allure-playwright & allure generate allure-results --clean -o allure-report",
     "justreg": "npx playwright test tests",
-    "justUI": "npx playwright test tests/UIBasics.spec.js",
+    "justUI": "npx playwright test tests/UIBasics.spec.ts",
     "currentTest": "rmdir /s /q allure-results & npx playwright test verifyChecked.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report",
     "currentTestWithoutAllureopen": "rmdir /s /q allure-results & npx playwright test verify_dynamicID.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report",
     "alerttest": "set TEST_ENV=qa & rmdir /s /q allure-results & npx playwright test VerifyAlerts.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report",
     "runPlaygroundFoldertests": " rmdir /s /q allure-results & set TEST_ENV=test & npx playwright test playground_tests --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report",
-    "paralleltest": "rmdir /s /q allure-results & npx playwright test tests/playground_tests --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report"
+    "paralleltest": "rmdir /s /q allure-results & npx playwright test tests/playground_tests --grep SBP --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -20,12 +20,14 @@
   "devDependencies": {
     "@playwright/test": "^1.58.1",
     "@types/node": "^24.10.0",
+    "@types/winston": "^2.4.4",
     "allure-commandline": "^2.36.0",
     "allure-playwright": "^3.4.5",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "dotenv": "^17.3.1",
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "winston": "^3.19.0"
   }
 }

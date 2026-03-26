@@ -5,11 +5,14 @@ export class clientSideDelayPage {
     private readonly page: Page;
     private readonly clientSieDealybtn: Locator;
     private readonly clientreplyText: Locator;
-    constructor(page: Page) {
+    constructor(page: Page,) {
 
         this.page = page;
         this.clientSieDealybtn = page.getByRole('button', { name: 'Button Triggering Client Side Logic' });
         this.clientreplyText = page.locator('.bg-success');
+    }
+    async navigate(){
+        await this.page.goto('/');
     }
     async clickonClientDelaybtn() {
         await this.clientSieDealybtn.click();
