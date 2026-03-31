@@ -1,18 +1,18 @@
-import { test, expect } from '../../fixtures/baseTest';
-import * as allure from 'allure-js-commons';
+import { test, expect } from '../../fixtures/pageFixtures';
+import { logger } from 'utility';
 
 const testdate = [27]
 for (const date of testdate) {
     test(`@reg @smoke @ui @DM @date testing datepicker for ${date}`, async ({ page }) => {
     
-        console.log(date);
+        logger.info(`Selecting date: ${date}`);
         await page.goto("https://playground.bondaracademy.com/pages/forms/datepicker");
         await page.getByPlaceholder('Form Picker').click();
         let attempt = 20;
         while (attempt--) {
             const currentDate =
                 await page.locator("button[class='appearance-ghost size-medium shape-rectangle icon-end status-basic nb-transition']").textContent();
-            console.log(currentDate)
+            logger.debug(`Calendar heading: ${currentDate}`);
             if (currentDate?.trim() == 'February 2025') { //? means if null return undefined else call .trim()
                 break;
             }
@@ -24,7 +24,7 @@ for (const date of testdate) {
         const selectedDate = await page.getByPlaceholder('Form Picker').inputValue();
         //“Modern date pickers update the input’s value property dynamically using JavaScript, not the inner DOM text,
         //  so we must use inputValue() to fetch it.”
-        console.log(selectedDate)
+        logger.info(`Selected date value: ${selectedDate}`);
     })
 }
 

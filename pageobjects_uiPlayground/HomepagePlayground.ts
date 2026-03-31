@@ -1,11 +1,8 @@
 import { Page, Locator } from '@playwright/test';
-import { DynamicID } from './DynamicIDPage';
-import { clientSideDelayPage } from './ClientSideDelayPage';
-const url = "http://www.uitestingplayground.com/";
+import { UIActions } from 'utility';
 
 export class HomepagePlayground {
-
-    private readonly page: Page;
+   
     private readonly title: Locator;
     private readonly dynamicID: Locator;
     private readonly classAttribute: Locator;
@@ -33,8 +30,8 @@ export class HomepagePlayground {
     private readonly homePage: Locator;
 
 
-    constructor(page: Page) {
-        this.page = page;
+    constructor(private page: Page,private actions: UIActions) {
+    
         this.homePage = page.getByText('UITAP');
         this.title = page.locator('#title');
         this.dynamicID = page.locator('a[href="/dynamicid"]');
@@ -61,12 +58,11 @@ export class HomepagePlayground {
         this.amimatedBtn = page.locator('a[href="/animated"]');
         this.disabledInput = page.locator('a[href="/disabledinput"]');
         this.frames = page.locator('a[href="/frames"]');
-
     }
 
 
     async clickHome() {
-        await this.homePage.click();
+        await this.actions.click(this.homePage, 'homepage link');
     }
 
     // async navigateToDynamicID(){
@@ -75,12 +71,10 @@ export class HomepagePlayground {
 
     // }
     async navigateToClientSideDelay() {
-        await this.clientSideDelay.click();
-        return new clientSideDelayPage(this.page);
-
+        await this.actions.click(this.clientSideDelay, 'Client delay button');
     }
     async navigateToAlerts() {
-        await this.Alert.click();
+        await this.actions.click(this.Alert, 'Alert link');
 
     }
 }

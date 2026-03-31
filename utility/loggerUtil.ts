@@ -1,5 +1,12 @@
 import * as winston from 'winston';
 
+export type TestLogger = {
+  info: (message: string) => void;
+  debug: (message: string) => void;
+  warn: (message: string) => void;
+  error: (message: string) => void;
+};
+
 /**
  * Extract caller info (same as yours, slightly cleaned)
  */
@@ -56,12 +63,19 @@ const baseLogger = winston.createLogger({
   ]
 });
 
-/**
- * Wrapper logger (THIS is key)
- */
-export const logger = {
-  info: (msg: string) => baseLogger.info(msg, { caller: getCallerInfo() }),
-  debug: (msg: string) => baseLogger.debug(msg, { caller: getCallerInfo() }),
-  warn: (msg: string) => baseLogger.warn(msg, { caller: getCallerInfo() }),
-  error: (msg: string) => baseLogger.error(msg, { caller: getCallerInfo() })
+const writeLog = (level: keyof TestLogger, message: string) => {
+  baseLogger.log(level, message, { caller: getCallerInfo() });
 };
+
+const formatMessage = (testTitle: string | undefined, message: string) => {
+  return testTitle ? `[${testTitle}] ${message}` : message;
+};
+
+export const createTestLogger = (testTitle?: string): TestLogger => ({
+  info: (message: string) => writeLog('info', formatMessage(testTitle, message)),
+  debug: (message: string) => writeLog('debug', formatMessage(testTitle, message)),
+  warn: (message: string) => writeLog('warn', formatMessage(testTitle, message)),
+  error: (message: string) => writeLog('error', formatMessage(testTitle, message))
+});
+
+export const logger = createTestLogger();

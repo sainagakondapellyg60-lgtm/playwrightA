@@ -59,3 +59,7 @@ run tests with genrate report
 # logger reports:
 npm install winston --save
 npm install @types/winston --save-dev
+
+
+# command to pass tags to run
+set TAGS="@smoke|@reg" && npm run test:tags

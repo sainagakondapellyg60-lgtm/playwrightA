@@ -1,18 +1,16 @@
-import { test, expect } from '../../fixtures/baseTest';
-import { POMangerPG } from '../../pageobjects_uiPlayground/poManagerPlayground';
+import { test, expect } from '../../fixtures/pageFixtures';
+import { logger } from 'utility';
 
-test('@reg  @ui @SBP @alert verify dialogs', async ({ page},testInfo) => {
+test('@reg @ui @SBP @alert verify dialogs', async ({ page, alerts },testInfo) => {
     test.skip(testInfo.title.includes('dialogs'), 'skipping for reports');
-    console.log('begin alerts-' + await page.goto('/'));
-    const poObj = new POMangerPG(page);
-    const alertsPageObj = poObj.getAlertPageObj();
-    // await page.goto('/');
-    await alertsPageObj.navigateToAlerts();
+    await page.goto('/');
+    logger.info('Starting alerts flow');
+    await alerts.navigateToAlerts();
 
-    const [dialogInfo] = await alertsPageObj.handlePrompt();
-    await alertsPageObj.handleConfirm();
-    await alertsPageObj.handleAlert();
+    const [dialogInfo] = await alerts.handlePrompt();
+    await alerts.handleConfirm();
+    await alerts.handleAlert();
     await expect.soft(dialogInfo.type).toBe('prompt');
-    console.log('end alerts')
+    logger.info('Completed alerts flow');
 
 })

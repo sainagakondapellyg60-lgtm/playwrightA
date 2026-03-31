@@ -5,7 +5,7 @@
 
 export const TIMEOUTS = {
     CLIENT_SIDE_DELAY: 18000,      // 18 seconds - for client-side logic delays
-    ELEMENT_VISIBLE: 5000,         // 5 seconds - for element visibility waits
+    ELEMENT_VISIBLE: 20000,         // 20 seconds - for element visibility waits
     NETWORK_TIMEOUT: 30000,        // 30 seconds - for network requests
     PAGE_LOAD: 20000,              // 20 seconds - for page load
     ASSERTION_TIMEOUT: 16000,      // 16 seconds - for assertions

@@ -1,20 +1,17 @@
-import { formfields } from '../../pageobjects/formfields';
-import { test, expect } from '../../fixtures/baseTest';
-import * as allure from 'allure-js-commons';
-import { logger } from '../../utility/loggerUtil'
+import { test, expect } from '../../fixtures/pageFixtures';
+import { logger } from 'utility';
 
-formObj: formfields
-test('@reg  @ui @SBP @checkbox verify checked', async ({ page },testInfo) => {
+test('@reg @ui @SBP @checkbox verify checked', async ({ formfield },testInfo) => {
  //test.skip(testInfo.title.includes('checked'), 'skipping for reports');
-    const formObj = new formfields(page);
+ 
     logger.info('Navigating to URL');
-    await formObj.naviagate();
-    await formObj.clickformfieldBtn()
-    await formObj.namePawd()
-    const result1 = await formObj.selectCheckboxvlue();
-    console.log(result1);
-    const result = await formObj.uncheckBox()
-    console.log(result);
+    await formfield.naviagate();
+    await formfield.clickformfieldBtn()
+    await formfield.namePawd()
+    const result1 = await formfield.selectCheckboxvlue();
+    logger.info(`Checked values: ${JSON.stringify(result1)}`);
+    const result = await formfield.uncheckBox()
+    logger.info(`Unchecked values: ${JSON.stringify(result)}`);
 
   logger.warn('Page loaded warn');
   logger.debug('Page loaded successfully');

@@ -1,7 +1,8 @@
 // @ts-check
 import { chromium, defineConfig, devices } from '@playwright/test';
 import { trace } from 'console';
-import  dotenv from 'dotenv';
+import  * as dotenv from 'dotenv';
+//import 'ts-node/register';
 
 const env = (process.env.TEST_ENV || 'qa').trim();
 
@@ -16,12 +17,12 @@ console.log(`Base URL: ${process.env.TEST_URL}`+'\n'+`log Level:${process.env.lO
 const config = ({
   testDir: './tests',
   retries: 1,
-  workers: 5,
+  workers: 3,
   //overriding default 30sec timeout by playwright
-  timeout: 50 * 1000,
+  timeout: 40 * 1000,
   //for assertions timeout
   expect: {
-    timeout: 51 * 1000,
+    timeout: 40 * 1000,
   },
   reporter: [['html'], ['line'],
   ['allure-playwright']],

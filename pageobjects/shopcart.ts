@@ -1,16 +1,17 @@
 import { Locator, Page } from '@playwright/test';
+import { logger } from 'utility';
 
 const lauchshopurl = 'https://shop.polymer-project.org/'
 export class shopcart {
-    private readonly page: Page
+  
     private readonly outerWearbutton: Locator;
     private readonly productgrid: Locator;
     private readonly titles: Locator;
     private readonly addcart: Locator;
     private readonly viewcart: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
+    constructor(private page: Page) {
+    
         this.outerWearbutton = page.getByRole('link', { name: "Men's Outerwear" })
         this.productgrid = page.locator('ul.grid');
         this.titles = page.locator('div.title');
@@ -40,13 +41,13 @@ export class shopcart {
     async addProductTocart(product: string) {
 
         const countofItems = await this.titles.count();
-        console.log(countofItems);
+        logger.info(`Product count on page: ${countofItems}`);
         const allitemsnames: string[] = await this.titles.allTextContents();
-        console.log(allitemsnames)
+        logger.debug(`Product titles: ${JSON.stringify(allitemsnames)}`);
 
         for (const i of allitemsnames) {
             if (i === product) {
-                console.log(i)
+                logger.info(`Opening product: ${i}`);
                 await this.titles.filter({ hasText: product }).click();
                 break;
             }
