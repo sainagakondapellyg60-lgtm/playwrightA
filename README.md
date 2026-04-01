@@ -63,3 +63,6 @@ npm install @types/winston --save-dev
 
 # command to pass tags to run
 set TAGS="@smoke|@reg" && npm run test:tags
+
+# playwright cli (like mcp but uses less tokens)
+https://github.com/microsoft/playwright-cli
