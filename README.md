@@ -62,3 +62,5 @@ npm install @types/winston --save-dev
 
 # playwright cli (like mcp but uses less tokens)
 https://github.com/microsoft/playwright-cli
+
+to install npx playwright-cli install --skills
