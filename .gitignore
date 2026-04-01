@@ -9,3 +9,4 @@ playwright-report/
 /allure-results/
 javascriptP/renameFile.js
 javascriptP/renameFile.ts
+/.claude/

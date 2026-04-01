@@ -17,7 +17,6 @@ export const test = base.extend<PageObjectFixtures & { pages: Pages }>({
         await use(new HomepagePlayground(page, actions));
     },
 
-    //
     alerts: async ({ page, actions, dialog }, use) => {
         await use(new alertsPage(page, actions, dialog));
     },

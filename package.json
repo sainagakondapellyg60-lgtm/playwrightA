@@ -12,7 +12,7 @@
     "alerttest": "set TEST_ENV=qa & rmdir /s /q allure-results & npx playwright test VerifyAlerts.test.ts --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report",
     "runPlaygroundFoldertests": " rmdir /s /q allure-results & set TEST_ENV=test & npx playwright test playground_tests --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report",
     "paralleltest": "rmdir /s /q allure-results & npx playwright test tests/playground_tests --grep smoke --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report",
-    "test:tags":"rmdir /s /q allure-results & npx playwright test tests/playground_tests --grep %TAGS% --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report"
+    "test:tags": "rmdir /s /q allure-results & npx playwright test tests/playground_tests --grep %TAGS% --reporter=line,allure-playwright & allure generate allure-results --clean --single-file -o allure-report & allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@playwright/cli": "^0.1.4",
     "dotenv": "^17.3.1",
     "exceljs": "^4.4.0",
     "winston": "^3.19.0"

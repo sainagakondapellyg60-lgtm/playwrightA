@@ -1,21 +1,22 @@
 // baseTest.ts
 import { test as base, TestInfo } from '@playwright/test';
 import * as allure from 'allure-js-commons';
-import { dialogHandler ,createTestLogger, type TestLogger ,UIActions} from 'utility';
+import { dialogHandler, createTestLogger, type TestLogger, UIActions } from 'utility';
 
+//re-export
 export * from '@playwright/test';
 
 export type BaseFixtures = {
     testTitle: string;
     log: TestLogger;
     actions: UIActions;
-    dialog: dialogHandler; 
+    dialog: dialogHandler;
 };
 
 export const test = base.extend<BaseFixtures>({
 
     // Extract + clean title + tagging
-    testTitle: [async ({}, use, testInfo: TestInfo) => {
+    testTitle: [async ({ }, use, testInfo: TestInfo) => {
 
         const originalTitle = testInfo.title;
         const tags: string[] = originalTitle.match(/@[\w-]+/g) || [];
@@ -30,10 +31,10 @@ export const test = base.extend<BaseFixtures>({
 
             if (value === 'ui') {
                 allure.label('parentSuite', 'UI');
-                
+
             } else if (value === 'api') {
                 allure.label('parentSuite', 'API');
-               
+
             } else if (!featureSet && ['DM', 'SBP', 'BTU'].includes(value)) {
                 allure.label('feature', value.toUpperCase());
                 featureSet = true;
@@ -70,6 +71,6 @@ export const test = base.extend<BaseFixtures>({
         await use(new UIActions(page, log));
     },
     dialog: async ({ page }, use) => {
-    await use(new dialogHandler(page));
-},
+        await use(new dialogHandler(page));
+    },
 });
