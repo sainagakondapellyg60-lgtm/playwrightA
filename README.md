@@ -59,3 +59,6 @@ run tests with genrate report
 # logger reports:
 npm install winston --save
 npm install @types/winston --save-dev
+
+# playwright cli (like mcp but uses less tokens)
+https://github.com/microsoft/playwright-cli
